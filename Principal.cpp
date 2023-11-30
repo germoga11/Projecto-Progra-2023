@@ -5,67 +5,8 @@
 
 using namespace std;
 
-//clases
-    class Empleado {
-        friend class Gerentes;
-        friend class Administradores;
-        friend class Servicio;
-        
-        protected:
-            string nombre;
-            string direccion;
-            string telfono;
-            string rfc;
-            string puesto;
-            int id;//codigo de empleado
-
-        public:
-            int salario;
-
-
-    };
-
-    class Gerentes{
-        // salario 25000
-    };
-
-    class Administradores{
-        //salario 8000 + 5% de cada huesped
-
-    };
-    class Servicio{
-        
-        //salario 6000
-
-    };
-
-    class Cliente {
-        string nombre;
-        string direccion;
-        string telfono;
-        string rfc;
-        string correo;
-
-    };
-
-    class Habitacion {
-        protected:
-            int cde;// codigo del empleado que reservo la habitacion
-            int numero_de_habitacion;
-            float precio;
-            string estado;
-        public:
-
-    };
-
-//Funciones
-
-
-
-// MENU 
-
 int main(){
-int eleccion;
+int opcion;
     do {
             // Menu Principal
             cout << "Menu:\n";
@@ -78,10 +19,10 @@ int eleccion;
 
            
             cout << "Elija una opcion: ";
-            cin >> eleccion;
+            cin >> opcion;
 
             
-            switch (eleccion) {
+            switch (opcion) {
                 case 1:
                     cout << "-Empleados-\n"<<"\n";
                     cout << "1. Ingresar un nuevo registro\n";
@@ -90,25 +31,59 @@ int eleccion;
                     cout << "4. Renta de habitacion\n";
                     cin >> "eleccion";
                     system("cls");
-                        switch (eleccion) {
-                            case 1:
-                        
-                            break;
-
-                            case 2:
-
-                            break;
-                            case 3; 
-
-                            break;
-                case 2:
-                    cout << "-Clientes-\n" << "\n";
+                                        switch (opcion) {
+                                             case 1:
+                                        
+                                            break;
                 
-                    cout << "1. Ingresar un nuevo registro\n";
-                    cout << "2. Consultar uno o varios registros \n";
-                    cout << "3. Eliminar un registro\n";
-                    cout << "4. Renta de habitacion\n";
-                    break;
+                                            case 2:
+                
+                                            break;
+                                            case 3; 
+                
+                                            break;
+                                        }
+                case 2:
+                    MostrarMenu();
+                    cin >> opcion;
+                switch (opcion) {
+                            case 1:
+                                cout << "\nIngrese el nombre del cliente: ";
+                                cin.ignore();
+                                getline(cin, nombre);
+                
+                                cout << "Ingrese el correo del cliente: ";
+                                getline(cin, correo);
+                
+                                cout << "Ingrese el teléfono del cliente: ";
+                                getline(cin, telefono);
+                
+                                cout << "Ingrese el RFC del cliente: ";
+                                getline(cin, rfc);
+                
+                                lista.AgregarCliente(nombre, correo, telefono, rfc);
+                                break;
+                
+                            case 2:
+                                lista.MostrarClientes();
+                                break;
+                
+                            case 3:
+                                cout << "\nIngrese el RFC del cliente a buscar: ";
+                                cin.ignore();
+                                getline(cin, rfc);
+                                lista.BuscarClientePorRFC(rfc);
+                                break;
+                
+                            case 4:
+                                cout << "\nIngrese el RFC del cliente a eliminar: ";
+                                cin.ignore();
+                                getline(cin, rfc);
+                                lista.EliminarClientePorRFC(rfc);
+                                break;
+                                    break;
+                                }
+                            
                 case 3:
                     cout << "-Habitacion-\n";
                 
@@ -118,6 +93,7 @@ int eleccion;
                         //info de la habitacion
                 
                     break;
+                    
                 case 4:
                     cout << "-Renta de habitacion-\n";
                 
