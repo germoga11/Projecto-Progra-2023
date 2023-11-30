@@ -21,6 +21,7 @@ using namespace std;
         public:
             int salario;
 
+
     };
 
     class Gerentes{
@@ -48,15 +49,22 @@ using namespace std;
 
     class Habitacion {
         protected:
-            int codigo;
+            int cde;// codigo del empleado que reservo la habitacion
+            int numero_de_habitacion;
             float precio;
             string estado;
         public:
 
     };
+
+//Funciones
+
+
+
 // MENU 
-int eleccion;
+
 int main(){
+int eleccion;
     do {
             // Menu Principal
             cout << "Menu:\n";
@@ -79,10 +87,19 @@ int main(){
                     cout << "2. Consultar uno o varios registros \n";
                     cout << "3. Eliminar un registro\n";
                     cout << "4. Renta de habitacion\n";
-                    
-                    
-                    
-                    break;
+                    cin >> "eleccion";
+                    system("cls");
+                        switch (eleccion) {
+                            case 1:
+                        
+                            break;
+
+                            case 2:
+
+                            break;
+                            case 3; 
+
+                            break;
                 case 2:
                     cout << "-Clientes-\n" << "\n";
                 
