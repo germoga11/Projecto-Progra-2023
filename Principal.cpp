@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "ListasMain"
+#include "ListaMain.h"
 
 
 using namespace std;
