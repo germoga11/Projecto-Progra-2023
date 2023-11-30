@@ -4,15 +4,17 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 class Cliente {
 private:
-    std::string nombre;
-    std::string correo;
-    std::string telefono;
-    std::string rfc;
+    string nombre;
+    string correo;
+    string telefono;
+    string rfc;
 
 public:
-    Cliente(const std::string& n, const std::string& c, const std::string& t, const std::string& r);
+    Cliente(const string& n, const string& c, const string& t, const string& r);
 
     void MostrarCliente() {
         cout << "\n------------------------------------------------------";
@@ -35,7 +37,7 @@ private:
 
 public:
 
-   ListaClientes() : clientes(NULL), cantidadClientes(0) {}
+   ListaClientes() : clientes(nullptr), cantidadClientes(0) {}
 
     ~ListaClientes() {
         LimpiarClientes();
@@ -111,6 +113,4 @@ public:
     }
 };
 
-#endif 
-
-
+#endif
